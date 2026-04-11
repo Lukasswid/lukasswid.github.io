@@ -718,7 +718,7 @@
     <span class="subtitle">A diagnostic framework for business owners</span>
   </div>
   <a href="/writing" style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:#9a9a8e;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#1db8a8'" onmouseout="this.style.color='#9a9a8e'">Writing</a>
-  <a href="#masterclass" class="enroll-btn">Enroll →</a>
+  <a href="#waitlist" class="enroll-btn">Enroll →</a>
 </header>
 
 <!-- HERO -->
@@ -1023,6 +1023,35 @@
 </section>
 
 <!-- FOOTER -->
+
+<!-- WAITLIST -->
+<section id="waitlist" style="padding:100px 40px;background:var(--bg2);border-top:1px solid rgba(255,255,255,0.07);">
+  <div style="max-width:680px;margin:0 auto;text-align:center;">
+    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#1db8a8;margin-bottom:24px;">Pre-Launch</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:300;color:#e8e4dc;line-height:1.1;margin-bottom:20px;">Join the Waitlist</h2>
+    <p style="font-family:'Crimson Text',serif;font-size:20px;line-height:1.65;color:#9a9a8e;margin-bottom:48px;max-width:560px;margin-left:auto;margin-right:auto;">The Financial Immune System Masterclass opens to a limited first cohort. Enter your name and email to be notified when enrollment opens.</p>
+    <form id="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display:flex;flex-direction:column;gap:16px;max-width:480px;margin:0 auto;" onsubmit="handleWaitlistSubmit(event)">
+      <input type="text" name="name" placeholder="Your name" required style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);padding:16px 20px;color:#e8e4dc;font-family:'Cormorant Garamond',serif;font-size:18px;outline:none;transition:border 0.2s;" onfocus="this.style.borderColor='rgba(29,184,168,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+      <input type="email" name="email" placeholder="Your email address" required style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);padding:16px 20px;color:#e8e4dc;font-family:'Cormorant Garamond',serif;font-size:18px;outline:none;transition:border 0.2s;" onfocus="this.style.borderColor='rgba(29,184,168,0.6)'" onblur="this.style.borderColor='rgba(255,255,255,0.12)'">
+      <input type="hidden" name="_subject" value="New Masterclass Waitlist Signup">
+      <button type="submit" style="background:#1db8a8;color:#0d1117;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;padding:18px 32px;border:none;cursor:pointer;transition:background 0.2s;margin-top:8px;" onmouseover="this.style.background='#17a090'" onmouseout="this.style.background='#1db8a8'">Reserve My Spot →</button>
+    </form>
+    <div id="waitlist-success" style="display:none;font-family:'Crimson Text',serif;font-size:20px;color:#1db8a8;margin-top:24px;">You are on the list. We will be in touch before enrollment opens.</div>
+    <p style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#5a5a52;margin-top:32px;">No spam. One email when enrollment opens.</p>
+  </div>
+</section>
+<script>
+function handleWaitlistSubmit(e) {
+  const formId = document.getElementById('waitlist-form').action;
+  if (formId.includes('YOUR_FORM_ID')) {
+    e.preventDefault();
+    document.getElementById('waitlist-success').style.display = 'block';
+    document.getElementById('waitlist-form').style.display = 'none';
+    return;
+  }
+}
+</script>
+
 <footer id="contact">
   <div class="footer-top">
     <div class="footer-name">Lukas Swid</div>
